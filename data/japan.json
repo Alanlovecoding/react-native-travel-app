@@ -2,7 +2,7 @@
   "FIELDS": [
     {
       "id": 0,
-      "date": "Mon Aug 07 2018",
+      "date": "Mon Aug 07 2017",
       "title":"Depart from DCA",
       "subtitle": "Flight leaves from DC at 09:35. Transfer at Toronto. 15:35 arrive at Haneda Airport.",
       "tags": ["Xiaoyun", "Andrew", "Kyle"],
@@ -10,7 +10,7 @@
       "completed": false,
     }, {
       "id": 1,
-      "date": "Tue Aug 08 2018",
+      "date": "Tue Aug 08 2017",
       "title":"Arrive at Haneda Airport",
       "subtitle": "Yay Japan! Get a SUICA (best) or Pasmo card and get on the the Keikyu Line to go to Tokyo.",
       "tags": ["Xiaoyun", "Andrew", "Kyle"],
