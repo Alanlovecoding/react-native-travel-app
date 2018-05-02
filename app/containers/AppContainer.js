@@ -289,15 +289,15 @@ const CalendarScreen = ({ navigation, screenProps}) => (
     navigation={navigation}
   />
 );
-const TranslateScreen = ({ navigation, screenProps }) => (
-  <Translate
-    filters={screenProps.activeTranslate}
-    setFilters={screenProps.setActiveTranslate}
-    fields={screenProps.filteredTranslations}
-    setFields={screenProps.setFilteredTranslations}
-    navigation={navigation}
-  />
-);
+// const TranslateScreen = ({ navigation, screenProps }) => (
+//   <Translate
+//     filters={screenProps.activeTranslate}
+//     setFilters={screenProps.setActiveTranslate}
+//     fields={screenProps.filteredTranslations}
+//     setFields={screenProps.setFilteredTranslations}
+//     navigation={navigation}
+//   />
+// );
 
 //Bottom Navigator
 const TabNav = TabNavigator(
@@ -321,8 +321,8 @@ const TabNav = TabNavigator(
       screen: InfoScreen,
       path: '/info',
       navigationOptions: {
-        title: 'Info',
-        tabBarLabel: 'Info',
+        title: 'Create_trip',
+        tabBarLabel: 'Create_trip',
         tabBarIcon: ({ tintColor }) => (
           <Image
             source={require('../assets/navbar/account.png')}
@@ -332,21 +332,21 @@ const TabNav = TabNavigator(
         headerTitleStyle:{ color: '#e8edf3'},
       },
     },
-    TranslateTab: {
-      screen: TranslateScreen,
-      path: '/translate',
-      navigationOptions: {
-        title: 'Translate',
-        tabBarLabel: 'Translate',
-        tabBarIcon: ({ tintColor }) => (
-          <Image
-            source={require('../assets/navbar/translate.png')}
-            style={[styles.tabBarIcon, {tintColor: tintColor}]}
-          />),
-        headerStyle:{ backgroundColor: '#22264b'},
-        headerTitleStyle:{ color: '#e8edf3'},
-      },
-    },
+    // TranslateTab: {
+    //   screen: TranslateScreen,
+    //   path: '/translate',
+    //   navigationOptions: {
+    //     title: 'Translate',
+    //     tabBarLabel: 'Translate',
+    //     tabBarIcon: ({ tintColor }) => (
+    //       <Image
+    //         source={require('../assets/navbar/translate.png')}
+    //         style={[styles.tabBarIcon, {tintColor: tintColor}]}
+    //       />),
+    //     headerStyle:{ backgroundColor: '#22264b'},
+    //     headerTitleStyle:{ color: '#e8edf3'},
+    //   },
+    // },
     TodoListTab: {
       screen: TodoListScreen,
       path: '/list',
