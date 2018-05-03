@@ -25,6 +25,7 @@ var TodoList = require('../components/TodoList');
 var Calendar = require('../components/Calendar');
 var Translate = require('../components/Translate');
 var Details = require('../components/Details');
+var SanFrancisco = require('../components/SanFrancisco')
 var Login = require('../components/Login');
 var TravelDates = require('../components/TravelDates');
 var FilterBar = require('../components/FilterBar');
@@ -53,128 +54,65 @@ const FIELDS = [
   }
 ]
 
+
 const HomeScreen = ( { navigation }) => (
 <ScrollView>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Japan Regions</Text>
+    <Text style={styles.textLarge}>San Francisco</Text>
+      <TouchableHighlight onPress={() => navigation.navigate('SanFranciscoDetail')}>
+        <Image
+          style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+          source={require('../../data/img/SanFrancisco.jpg')}
+          />
+      </TouchableHighlight>
+  </View>
+  <View style={styles.card}>
+    <Text style={styles.textLarge}>New York City</Text>
       <Image
-        style={{width: windowWidth*0.96, height: windowWidth, alignSelf: 'center'}}
-        source={require('../../data/img/japan-regions.png')}
+        style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+        source={require('../../data/img/New-York-City.jpg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>IC cards by region</Text>
+    <Text style={styles.textLarge}>Chicago</Text>
       <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.85, alignSelf: 'center'}}
-        source={require('../../data/img/ic-cards-by-region.png')}
+        style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+        source={require('../../data/img/Chicago.jpg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Access Koyasan and KIX</Text>
+    <Text style={styles.textLarge}>Seattle</Text>
       <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.85, alignSelf: 'center'}}
-        source={require('../../data/img/access-koyasan.png')}
+        style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+        source={require('../../data/img/Seattle.jpg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Tokyo Neighborhoods</Text>
+    <Text style={styles.textLarge}>Los Angeles</Text>
       <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.75, alignSelf: 'center'}}
-        source={require('../../data/img/tokyo-neighborhoods.png')}
+        style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+        source={require('../../data/img/Los_Angeles.jpg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Numbers</Text>
+    <Text style={styles.textLarge}>Washington DC</Text>
       <Image
-        style={{width: windowWidth*0.96, height: windowWidth*1.32, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-numbers.png')}
-      />
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.88, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-numbers2.png')}
+        style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+        source={require('../../data/img/Washington-DC.jpg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Money</Text>
+    <Text style={styles.textLarge}>Miami</Text>
       <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.5, alignSelf: 'center'}}
-        source={require('../../data/img/money.png')}
+        style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+        source={require('../../data/img/Miami.jpg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Weekdays</Text>
+    <Text style={styles.textLarge}>Boston</Text>
       <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.8, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-weekdays.png')}
-      />
-  </View>
-  <View style={styles.card}>
-    <Text style={styles.textLarge}>Hiragana</Text>
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.58, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-hiragana.png')}
-      />
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.47, alignSelf: 'center', marginTop: 5}}
-        source={require('../../data/img/cheatsheet-hiragana2.png')}
-      />
-  </View>
-  <View style={styles.card}>
-    <Text style={styles.textLarge}>Katakana</Text>
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.58, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-katakana.png')}
-      />
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.47, alignSelf: 'center', marginTop: 5}}
-        source={require('../../data/img/cheatsheet-katakana2.png')}
-      />
-  </View>
-  <View style={styles.card}>
-    <Text style={styles.textLarge}>Toire (Toilette)</Text>
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.9, alignSelf: 'center'}}
-        source={require('../../data/img/toire.png')}
-      />
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.9, alignSelf: 'center'}}
-        source={require('../../data/img/toire2.png')}
-      />
-  </View>
-  <View style={styles.card}>
-    <Text style={styles.textLarge}>Ryokan (hotel)</Text>
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*1.08, alignSelf: 'center'}}
-        source={require('../../data/img/ryokan.png')}
-      />
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*0.94, alignSelf: 'center'}}
-        source={require('../../data/img/ryokan2.png')}
-      />
-  </View>
-  <View style={styles.card}>
-    <Text style={styles.textLarge}>Foods</Text>
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-foods.png')}
-      />
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-dinner.png')}
-      />
-  </View>
-  <View style={styles.card}>
-    <Text style={styles.textLarge}>Drinks</Text>
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-drinks.png')}
-      />
-  </View>
-  <View style={styles.card}>
-    <Text style={styles.textLarge}>Sushi</Text>
-      <Image
-        style={{width: windowWidth*0.96, height: windowWidth*1.13, alignSelf: 'center'}}
-        source={require('../../data/img/cheatsheet-sushi.png')}
+        style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
+        source={require('../../data/img/Boston.jpg')}
       />
   </View>
 </ScrollView>
@@ -253,6 +191,12 @@ const TravelDatesScreen = ({ navigation, screenProps}) => (
     screenProps={screenProps}
     />
 );
+const SanFranciscoScreen = ({ navigation, screenProps}) => (
+  <SanFrancisco
+    navigation={navigation}
+    screenProps={screenProps}
+    />
+);
 const LoginScreen = ({ navigation, screenProps}) => (
   /* TODO: instead of passing in the entire screenProps, give Login the actual
    * props it needs such that Login doesn't have to know anything about how states are
@@ -306,7 +250,7 @@ const TabNav = TabNavigator(
       screen: HomeScreen,
       path: '/',
       navigationOptions: {
-        title: 'Home',
+        title: 'Destination',
         tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => (
           <Image
@@ -386,6 +330,16 @@ const TabNav = TabNavigator(
 const TravelAppJapan = StackNavigator({
   Root: {
     screen: TabNav, //bottom navigator
+  },
+  SanFranciscoDetail: {
+    screen: SanFranciscoScreen,
+    navigationOptions: {
+      title: 'San Francisco',
+      headerStyle: { backgroundColor: '#22264b'},
+      headerTitleStyle: { color: '#e8edf3'},
+      headerTitleStyle:{ color: '#e8edf3'},
+      headerTintColor: '#e8edf3',
+    },
   },
   LoginSetting: {
     screen: LoginScreen,
