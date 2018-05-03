@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../actions'
 
+
 import {
   View,
   Text,
@@ -15,6 +16,7 @@ import {
   Image,
   TouchableHighlight,
   TouchableOpacity,
+  FlatList
 } from 'react-native';
 
 import { NavigationComponent } from 'react-native-material-bottom-navigation';
@@ -23,12 +25,13 @@ import Swipeout from 'react-native-swipeout'
 
 var TodoList = require('../components/TodoList');
 var Calendar = require('../components/Calendar');
-var Translate = require('../components/Translate');
+//var Translate = require('../components/Translate');
 var Details = require('../components/Details');
 var Login = require('../components/Login');
 var TravelDates = require('../components/TravelDates');
 var FilterBar = require('../components/FilterBar');
 var HeroText = require('../components/HeroText');
+var Check = require('../components/Check');
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -197,6 +200,7 @@ const InfoScreen = ({ navigation, screenProps }) => (
         setUserFilteredTodos={screenProps.setUserFilteredTodos}
         />
     </View>
+
     <HeroText>Step 2</HeroText>
     <View style={styles.section}>
       <Button
@@ -208,22 +212,26 @@ const InfoScreen = ({ navigation, screenProps }) => (
          <Text style={styles.textSmall}>End: {screenProps.travelDates.slice(-1)[0]}</Text>
        </View>
     </View>
+
+
     <HeroText>Step 3</HeroText>
     <View style={styles.section}>
-       <Button
-        onPress={() => navigation.navigate('TodoListTab')}
-        title="See All Your To-dos"
-        />
-       <Button
-        onPress={() => navigation.navigate('CalendarTab')}
-        title="See Your To-dos by Date"
-        />
+       <Check name='Golden Gate Bridge' />
+       <Check name='Lombard Street' />
+       <Check name='Alcatraz Island' />
+       <Check name='Fishermans Wharf' />
+       <Check name='Palace of Fine Arts' />
+   <HeroText>Step 4</HeroText>
+   <View style={styles.section}>
+      <Button
+       onPress={() => navigation.navigate('CalendarTab')}
+       title="See Your Itinerary"
+       />
+   </View>
+
+
+
     </View>
-    <HeroText>Resources:</HeroText>
-    <Button
-      onPress={() => navigation.navigate('TranslateTab')}
-      title="Useful Japanese Phrases"
-      />
   </ScrollView>
 );
 
@@ -565,6 +573,16 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
+  container1: {
+  flex: 1,
+  paddingTop: 22
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+  },
+
 });
 
 /*************** Redux Stuff ****************/
@@ -581,7 +599,7 @@ export default connect((state) => {
     travelDates: state.travelDates,
     activeUsers: state.activeUsers,
     userFilteredTodos: state.userFilteredTodos,
-    activeTranslate: state.activeTranslate,
+    //activeTranslate: state.activeTranslate,
     filteredTranslations: state.filteredTranslations,
   }
 }, mapDispatchToProps)(AppContainer);
