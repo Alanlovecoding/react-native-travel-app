@@ -61,11 +61,11 @@ const FIELDS = [
 const HomeScreen = ( { navigation }) => (
 <ScrollView>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>San Francisco</Text>
+    <Text style={styles.textLarge}>Toyko</Text>
       <TouchableHighlight onPress={() => navigation.navigate('SanFranciscoDetail')}>
         <Image
           style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
-          source={require('../../data/img/SanFrancisco.jpg')}
+          source={require('../../data/img/Toyko.jpg')}
           />
       </TouchableHighlight>
   </View>
@@ -77,24 +77,24 @@ const HomeScreen = ( { navigation }) => (
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Chicago</Text>
+    <Text style={styles.textLarge}>Beijing</Text>
       <Image
         style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
-        source={require('../../data/img/Chicago.jpg')}
+        source={require('../../data/img/Beijing.jpeg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Seattle</Text>
+    <Text style={styles.textLarge}>London</Text>
       <Image
         style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
-        source={require('../../data/img/Seattle.jpg')}
+        source={require('../../data/img/London.jpg')}
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Los Angeles</Text>
+    <Text style={styles.textLarge}>Moscow</Text>
       <Image
         style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
-        source={require('../../data/img/Los_Angeles.jpg')}
+        source={require('../../data/img/Moscow.jpg')}
       />
   </View>
   <View style={styles.card}>
@@ -105,10 +105,10 @@ const HomeScreen = ( { navigation }) => (
       />
   </View>
   <View style={styles.card}>
-    <Text style={styles.textLarge}>Miami</Text>
+    <Text style={styles.textLarge}>Paris</Text>
       <Image
         style={{width: windowWidth*0.96, height: windowWidth*0.3, alignSelf: 'center'}}
-        source={require('../../data/img/Miami.jpg')}
+        source={require('../../data/img/Paris.jpg')}
       />
   </View>
   <View style={styles.card}>
@@ -154,11 +154,13 @@ const InfoScreen = ({ navigation, screenProps }) => (
 
     <HeroText>Step 3</HeroText>
     <View style={styles.section}>
-       <Check name='Golden Gate Bridge' />
-       <Check name='Lombard Street' />
-       <Check name='Alcatraz Island' />
-       <Check name='Fishermans Wharf' />
-       <Check name='Palace of Fine Arts' />
+       <Check name='Mount Fuji' />
+       <Check name='Senso-ji Temple' />
+       <Check name='Tokyo Tower' />
+       <Check name='Ginza' />
+       <Check name='University of Tokyo' />
+       <Check name='Tokyo skytree' />
+
    <HeroText>Step 4</HeroText>
    <View style={styles.section}>
       <Button
@@ -342,7 +344,7 @@ const TravelAppJapan = StackNavigator({
   SanFranciscoDetail: {
     screen: SanFranciscoScreen,
     navigationOptions: {
-      title: 'San Francisco',
+      title: 'Toyko',
       headerStyle: { backgroundColor: '#22264b'},
       headerTitleStyle: { color: '#e8edf3'},
       headerTitleStyle:{ color: '#e8edf3'},
