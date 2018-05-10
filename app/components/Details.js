@@ -159,6 +159,10 @@ class Details extends Component {
                 description={""}/>)
           })}
         </MapView>
+        <Button
+          onPress={() => navigation.navigate('LoginSetting')}
+          title="Buy Now"
+          />
         <View style={styles.container}>
           <Text style={styles.textLarge}>What To Do:</Text>
           <Text style={styles.textNormal}>{this.state.todo}</Text>
